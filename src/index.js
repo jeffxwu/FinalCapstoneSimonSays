@@ -174,9 +174,9 @@ function setLevel(level = 1) {
  * getRandomItem([1, 2, 3, 4]) //> returns 1
  */
 function getRandomItem(collection) {
-  // if (collection.length === 0) return null;
-  // const randomIndex = Math.floor(Math.random() * collection.length);
-  // return collection[randomIndex];
+  if (collection.length === 0) return null;
+  const randomIndex = Math.floor(Math.random() * collection.length);
+  return collection[randomIndex];
 }
 
 /**
@@ -184,6 +184,7 @@ function getRandomItem(collection) {
  */
 function setText(element, text) {
   // TODO: Write your code here.
+  element.textContent = text;
   return element;
 }
 
@@ -201,7 +202,14 @@ function setText(element, text) {
  */
 
 function activatePad(color) {
-  // TODO: Write your code here.
+  // TODO: Write your code here
+  const pad = pads.find(p => p.color === color);
+  if (!pad) return;
+  pad.selector.classList.add("activated");
+  pad.sound.play();
+  setTimeout(() => {
+    pad.selector.classList.remove("activated");
+  }, 500);
 }
 
 /**
