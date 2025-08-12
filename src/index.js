@@ -147,21 +147,11 @@ function padHandler(event) {
  * setLevel(8) //> returns "Please enter level 1, 2, 3, or 4";
  *
  */
-function setLevel(level = 1) {
+function setLevel() {
   // TODO: Write your code here.
-  switch (level) {
-    case 1:
-      return 8;
-    case 2:
-      return 14;
-    case 3:
-      return 20;
-    case 4:
-      return 31;
-    default:
-      return "Please enter level 1, 2, 3, or 4";
+    const skillLevelSelect = document.querySelector(".js-skill-level");
+    return parseInt(skillLevelSelect.value, 10);
   }
-}
 
 /**
  * Returns a randomly selected item from a given array.
