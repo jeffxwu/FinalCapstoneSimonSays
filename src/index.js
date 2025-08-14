@@ -88,8 +88,6 @@ function startButtonHandler() {
   startButton.classList.add("hidden");
   statusSpan.classList.remove("hidden");
   playComputerTurn();
-
-  return { startButton, statusSpan };
 }
 
 /**
@@ -114,8 +112,9 @@ function padHandler(event) {
   if (!color) return;
 
   // TODO: Write your code here.
-  var pad = pads.find(p => p.color === color);
+  const pad = pads.find(p => p.color === color);
   if (!pad) return;
+
   pad.sound.currentTime = 0;
   pad.sound.play();
   checkPress(color)
@@ -198,14 +197,10 @@ function setText(element, text) {
 
 function activatePad(color) {
   // TODO: Write your code here
-  var pad = pads.find(function (p) {
-    return p.color === color;
-  });
-
+  const pad = pads.find(p => p.color === color);
   if (!pad) return;
 
   pad.selector.classList.add("activated");
-
   pad.sound.currentTime = 0;
   pad.sound.play();
   
