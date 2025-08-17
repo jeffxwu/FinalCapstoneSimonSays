@@ -233,7 +233,7 @@ function activatePads(sequence) {
   sequence.forEach((color, index) => {
     setTimeout(() => {
       activatePad(color);
-    }, (index + 1) * 600);
+    }, index * (FLASH_MS + 100));
   });
 }
 
@@ -268,7 +268,8 @@ function activatePads(sequence) {
   const randomPad = pads[Math.floor(Math.random() * pads.length)];
   computerSequence.push(randomPad.color);
   activatePads(computerSequence);
-  setTimeout(() => playHumanTurn(roundCount), computerSequence.length * 600 + 600); // 5
+  const totalDuration = computerSequence.length * (FLASH_MS + 100)
+  setTimeout(() => playHumanTurn(roundCount), totalDuration + 100);
 }
 
 /**
