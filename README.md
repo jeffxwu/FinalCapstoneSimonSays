@@ -27,3 +27,11 @@ You can try the game live here: [Simon Says Game](https://jeffxwu.github.io/caps
 - **Dynamic gameplay** — random sequences each game.
 - **Score tracking** — shows how far you got before losing.
 - **Fully responsive** — works on desktop and mobile.
+
+---
+
+## 📝 Notes / Known Issues
+
+- The Simon Says game works on both **desktop** and **mobile** devices.  
+- On mobile, there may occasionally be a small visual glitch (e.g., the button light effect may not always appear perfectly in sync).  
+- Despite this, the game is fully playable across platforms.

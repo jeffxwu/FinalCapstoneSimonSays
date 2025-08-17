@@ -268,7 +268,7 @@ function activatePads(sequence) {
   const randomPad = pads[Math.floor(Math.random() * pads.length)];
   computerSequence.push(randomPad.color);
   activatePads(computerSequence);
-  setTimeout(() => playHumanTurn(roundCount), roundCount * 600 + 1000); // 5
+  setTimeout(() => playHumanTurn(roundCount), computerSequence.length * 600 + 600); // 5
 }
 
 /**
