@@ -1,3 +1,5 @@
+const FLASH_MS = 500;
+
 /**
  * DOM SELECTORS
  */
@@ -116,7 +118,9 @@ function padHandler(event) {
   if (!pad) return;
 
   pad.sound.currentTime = 0;
-  pad.sound.play();
+  pad.sound.play().catch(err => {
+    console.warn("Audio play failed:", err);
+  });
   checkPress(color)
   return color;
 }
@@ -207,7 +211,7 @@ function activatePad(color) {
   
   setTimeout(function () {
     pad.selector.classList.remove("activated");
-  }, 500);
+  }, FLASH_MS);
 }
 
 /**
